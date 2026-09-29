@@ -1,0 +1,35 @@
+:root { font-family: Arial, Helvetica, sans-serif; color: #172e39; background: #f4f6f3; font-size: 44px; font-weight: 700; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 1500px; margin: auto; padding: 48px 24px; }
+p { line-height: 1.5; }
+.question-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(270px, .48fr); gap: 24px; align-items: start; }
+.sentence-panel { padding: 24px; background: white; border: 2px solid #d8e0da; border-radius: 16px; }
+.hint { margin: 0 0 20px; color: #356656; font-size: 1.45rem; overflow-wrap: anywhere; }
+#question-title { font-size: 1.45rem; line-height: 1.5; margin: 0; overflow-wrap: anywhere; }
+.blank { white-space: nowrap; color: #176149; }
+#choices { display: grid; gap: 12px; }
+button { background: #176149; color: white; border: 2px solid transparent; border-radius: 12px; padding: 20px 28px; font: inherit; cursor: pointer; }
+button:hover { background: #104b38; }
+.choice { font-size: 1.1rem; background: white; color: #172e39; border-color: #d8e0da; text-align: left; padding: 18px; overflow-wrap: anywhere; }
+.choice:hover { background: #e7f1eb; border-color: #176149; }
+.choice:disabled { cursor: default; opacity: 1; }
+.choice.correct { background: #14532d; color: white; border-color: #14532d; }
+.choice.incorrect { background: #8b1e24; color: white; border-color: #8b1e24; }
+.choice:disabled:not(.correct):not(.incorrect) { background: #f4f6f3; color: #52625c; }
+:focus-visible { outline: 4px solid #a45100; outline-offset: 4px; }
+#restart { margin-top: 32px; }
+.secondary { background: transparent; border-color: #176149; color: #176149; }
+.secondary:hover { background: #e7f1eb; }
+[hidden] { display: none !important; }
+
+#next { margin-top: 24px; }
+
+#translation { margin: 28px 0 0; padding-top: 24px; border-top: 2px solid #d8e0da; color: #356656; font-size: 1.1rem; line-height: 1.4; }
+@media (max-width: 600px) { main { padding: 24px 10px; } .question-row { grid-template-columns: minmax(0, 1fr) 44%; gap: 10px; } .sentence-panel { padding: 16px 10px; } .choice { padding: 20px 8px; font-size: clamp(26px, 7vw, 42px); } #question-title, .hint { font-size: 42px; } #translation { font-size: 34px; } button { padding: 20px 14px; } }
+
+.sentence-column { min-width: 0; }
+#controls { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; margin-top: 12px; }
+#controls button { max-width: 100%; overflow-wrap: anywhere; margin-top: 0; }
+
+#explanation { margin: 20px 0; padding: 16px; border-left: 6px solid #8b1e24; background: #fff0eb; color: #752026; font-size: 1rem; overflow-wrap: anywhere; }
